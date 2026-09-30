@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Bahasa Arab Bab II Kelas 8 - MTsN 1 Kota Palangka Raya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arabic: {
+                            emerald: '#059669',
+                            teal: '#0D9488',
+                            darkTeal: '#115E59',
+                            amber: '#F59E0B',
+                            gold: '#D97706',
+                            bgLight: '#F0FDFA',
+                            cardBg: '#FFFBEB'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['Amiri', 'Cairo', 'serif'],
+                        heading: ['Fredoka', 'Cairo', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .arabic-text {
+            font-family: 'Amiri', 'Cairo', serif;
+            direction: rtl;
+            line-height: 2.2;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0D9488;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-teal-50/40 text-slate-800 font-body min-h-screen flex flex-col justify-between antialiased selection:bg-teal-200">
+
+    <!-- Header & Navigasi -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-4 border-teal-600 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('hero')">
+                <div class="w-12 h-12 bg-gradient-to-tr from-teal-700 to-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg transform hover:scale-105 transition">
+                    <i class="fa-solid fa-sun text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-heading font-extrabold text-lg sm:text-xl text-teal-950 leading-tight">
+                        العَرَبِيَّةُ : يَوْمِيَّاتُنَا
+                    </h1>
+                    <p class="text-xs font-bold text-teal-600">Bab II - MTsN 1 Kota Palangka Raya (Kelas 8)</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-2">
+                <button onclick="navigateTo('hero')" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition flex items-center gap-1.5 text-sm">
+                    <i class="fa-solid fa-house text-teal-600"></i> Beranda
+                </button>
+                <button onclick="navigateTo('tingkat1')" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Tingkat 1</button>
+                <button onclick="navigateTo('tingkat2')" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Tingkat 2</button>
+                <button onclick="navigateTo('tingkat3')" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Tingkat 3</button>
+                <button onclick="navigateTo('kuis')" class="px-4 py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-amber-950 font-black rounded-xl shadow-md transition transform hover:scale-105 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-gamepad"></i> Kuis Interaktif
+                </button>
+            </nav>
+
+            <div class="flex items-center space-x-2">
+                <button onclick="toggleSound()" class="p-2.5 bg-slate-100 hover:bg-teal-100 text-slate-700 hover:text-teal-800 rounded-xl transition shadow-sm">
+                    <i class="fa-solid fa-volume-high text-lg" id="soundIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-12">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="bg-gradient-to-r from-teal-700 via-emerald-600 to-teal-800 rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="md:col-span-8 space-y-4 text-center md:text-left">
+                    <span class="inline-block px-4 py-1.5 bg-amber-400 text-amber-950 text-xs sm:text-sm font-black rounded-full shadow-md uppercase">
+                        Bahasa Arab Bab II Kelas 8 MTs
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-heading font-extrabold leading-tight">
+                        يَوْمِيَّاتُنَا (Hari-Hari Kami)
+                    </h2>
+                    <p class="text-teal-100 text-base sm:text-lg">
+                        Pelajari Modul 1, 2, dan 3 kemudian kerjakan Kuis Interaktif 25 Soal.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                        <button onclick="navigateTo('tingkat1')" class="px-6 py-3 bg-amber-400 text-amber-950 font-bold rounded-2xl shadow-lg hover:bg-amber-500 transition">Mulai Belajar</button>
+                        <button onclick="navigateTo('kuis')" class="px-6 py-3 bg-white/20 text-white font-bold rounded-2xl border border-white/30 hover:bg-white/30 transition">Kerjakan Kuis</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL BELAJAR TINGKAT 1 -->
+        <section id="tingkat1" class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border-2 border-teal-100 space-y-6">
+            <div class="flex justify-between items-center border-b pb-4">
+                <div>
+                    <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Modul Belajar - Tingkat 1</span>
+                    <h3 class="text-2xl font-heading font-bold text-teal-950">المُفْرَدَاتُ (Kosakata Kegiatan Harian)</h3>
+                </div>
+                <span class="p-2 bg-teal-50 text-teal-700 rounded-xl text-xs font-bold">1 / 3 Modul</span>
+            </div>
+            
+            <p class="text-sm text-slate-600">Klik pada kosakata di bawah ini untuk mendengarkan pelafalan Bahasa Arabnya:</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="vocabGrid">
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center cursor-pointer hover:bg-teal-100 transition" onclick="speakText('يَسْتَيْقِظُ')">
+                    <p class="arabic-text text-2xl font-bold text-teal-900">يَسْتَيْقِظُ</p>
+                    <p class="text-sm font-semibold text-slate-600">Bangun Tidur</p>
+                </div>
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center cursor-pointer hover:bg-teal-100 transition" onclick="speakText('يَذْهَبُ')">
+                    <p class="arabic-text text-2xl font-bold text-teal-900">يَذْهَبُ</p>
+                    <p class="text-sm font-semibold text-slate-600">Pergi</p>
+                </div>
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center cursor-pointer hover:bg-teal-100 transition" onclick="speakText('يَدْرُسُ')">
+                    <p class="arabic-text text-2xl font-bold text-teal-900">يَدْرُسُ</p>
+                    <p class="text-sm font-semibold text-slate-600">Belajar</p>
+                </div>
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center cursor-pointer hover:bg-teal-100 transition" onclick="speakText('يَتَنَاوَلُ الفَطُورَ')">
+                    <p class="arabic-text text-2xl font-bold text-teal-900">يَتَنَاوَلُ الفَطُورَ</p>
+                    <p class="text-sm font-semibold text-slate-600">Sarapan Pagi</p>
+                </div>
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center cursor-pointer hover:bg-teal-100 transition" onclick="speakText('يُصَلِّي الصُّبْحَ')">
+                    <p class="arabic-text text-2xl font-bold text-teal-900">يُصَلِّي الصُّبْحَ</p>
+                    <p class="text-sm font-semibold text-slate-600">Shalat Subuh</p>
+                </div>
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center cursor-pointer hover:bg-teal-100 transition" onclick="speakText('يَرْجِعُ مِنَ المَدْرَسَةِ')">
+                    <p class="arabic-text text-2xl font-bold text-teal-900">يَرْجِعُ مِنَ المَدْرَسَةِ</p>
+                    <p class="text-sm font-semibold text-slate-600">Pulang Sekolah</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t flex justify-end">
+                <button onclick="navigateTo('tingkat2')" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2">
+                    Lanjut Tingkat 2 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- MODUL BELAJAR TINGKAT 2 -->
+        <section id="tingkat2" class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border-2 border-teal-100 space-y-6">
+            <div class="flex justify-between items-center border-b pb-4">
+                <div>
+                    <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Modul Belajar - Tingkat 2</span>
+                    <h3 class="text-2xl font-heading font-bold text-teal-950">القَوَاعِدُ (Tata Bahasa: Fi'il Mudhari' & Dhamir)</h3>
+                </div>
+                <span class="p-2 bg-teal-50 text-teal-700 rounded-xl text-xs font-bold">2 / 3 Modul</span>
+            </div>
+
+            <div class="bg-amber-50/70 p-5 rounded-2xl border border-amber-200 space-y-3">
+                <h4 class="font-bold text-amber-900 text-lg">Ringkasan Perubahan Kata Kerja (Fi'il Mudhari'):</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-slate-700">
+                        <thead class="text-xs text-slate-900 uppercase bg-amber-100">
+                            <tr>
+                                <th class="px-4 py-2">Dhamir (Kata Ganti)</th>
+                                <th class="px-4 py-2">Perubahan Huruf Depan</th>
+                                <th class="px-4 py-2">Contoh (Kata: Pergi)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 font-bold arabic-text text-base">أَنَا (Saya)</td>
+                                <td class="px-4 py-2">Diawali huruf <b>أ (Hamzah)</b></td>
+                                <td class="px-4 py-2 arabic-text font-bold text-teal-800">أَذْهَبُ</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 font-bold arabic-text text-base">أَنْتَ (Kamu Laki-laki)</td>
+                                <td class="px-4 py-2">Diawali huruf <b>ت (Ta)</b></td>
+                                <td class="px-4 py-2 arabic-text font-bold text-teal-800">تَذْهَبُ</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 font-bold arabic-text text-base">هُوَ (Dia Laki-laki)</td>
+                                <td class="px-4 py-2">Diawali huruf <b>ي (Ya)</b></td>
+                                <td class="px-4 py-2 arabic-text font-bold text-teal-800">يَذْهَبُ</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 font-bold arabic-text text-base">نَحْنُ (Kami)</td>
+                                <td class="px-4 py-2">Diawali huruf <b>ن (Nun)</b></td>
+                                <td class="px-4 py-2 arabic-text font-bold text-teal-800">نَذْهَبُ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t flex justify-end">
+                <button onclick="navigateTo('tingkat3')" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2">
+                    Lanjut Tingkat 3 <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- MODUL BELAJAR TINGKAT 3 -->
+        <section id="tingkat3" class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border-2 border-teal-100 space-y-6">
+            <div class="flex justify-between items-center border-b pb-4">
+                <div>
+                    <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Modul Belajar - Tingkat 3</span>
+                    <h3 class="text-2xl font-heading font-bold text-teal-950">القِرَاءَةُ (Membaca Teks Kalimat Harian)</h3>
+                </div>
+                <span class="p-2 bg-teal-50 text-teal-700 rounded-xl text-xs font-bold">3 / 3 Modul</span>
+            </div>
+
+            <div class="p-6 bg-teal-50/60 rounded-2xl border border-teal-200 space-y-4">
+                <p class="arabic-text text-2xl font-bold text-teal-950 leading-loose text-right">
+                    أَسْتَيْقِظُ مِنَ النَّوْمِ فِي السَّاعَةِ الرَّابِعَةِ صَبَاحًا، ثُمَّ أَتَوَضَّأُ وَأُصَلِّي الصُّبْحَ فِي المَسْجِدِ. بَعْدَ ذٰلِكَ أَقْرَأُ القُرْآنَ وَأَتَنَاوَلُ الفَطُورَ مَعَ أُسْرَتِي.
+                </p>
+                <div class="border-t border-teal-200 pt-3 text-xs sm:text-sm text-slate-600 font-semibold">
+                    <b>Terjemahan:</b> Saya bangun tidur pada jam 04.00 pagi, kemudian saya berwudhu dan shalat Subuh di masjid. Setelah itu saya membaca Al-Qur'an dan sarapan pagi bersama keluarga saya.
+                </div>
+            </div>
+
+            <div class="pt-4 border-t flex justify-end">
+                <button onclick="navigateTo('kuis')" class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-amber-950 font-black rounded-xl shadow-lg transition flex items-center gap-2">
+                    Mulai Kerjakan Kuis <i class="fa-solid fa-gamepad"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- KUIS INTERAKTIF SECTION -->
+        <section id="kuis" class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-amber-400">
+            <div id="quizHeader" class="text-center max-w-2xl mx-auto space-y-2 mb-8">
+                <span class="px-4 py-1.5 bg-amber-400 text-amber-950 text-xs font-black rounded-full uppercase shadow-sm">Ujian Akhir Modul</span>
+                <h3 class="text-3xl font-heading font-extrabold text-slate-900">Kuis Interaktif 25 Soal Lengkap</h3>
+            </div>
+
+            <!-- STEP 1: FORM IDENTITAS SISWA -->
+            <div id="quizFormStep" class="max-w-lg mx-auto bg-amber-50 p-6 rounded-3xl border-2 border-amber-200">
+                <form id="studentForm" onsubmit="startQuiz(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-1">Nama Lengkap Siswa</label>
+                        <input type="text" id="studentName" required placeholder="Ketik nama lengkapmu..." class="w-full px-4 py-3 rounded-xl border-2 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-1">Kelas</label>
+                        <select id="studentClass" required class="w-full px-4 py-3 rounded-xl border-2">
+                            <option value="">-- Pilih Kelas --</option>
+                            <option value="8-1">Kelas 8-1</option>
+                            <option value="8-2">Kelas 8-2</option>
+                            <option value="8-3">Kelas 8-3</option>
+                            <option value="8-4">Kelas 8-4</option>
+                            <option value="8-5">Kelas 8-5</option>
+                            <option value="8-6">Kelas 8-6</option>
+                            <option value="8-7">Kelas 8-7</option>
+                            <option value="8-8">Kelas 8-8</option>
+                            <option value="8-9">Kelas 8-9</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-teal-600 text-white font-bold rounded-xl shadow-lg hover:bg-teal-700 transition">Mulai Kerjakan Soal</button>
+                </form>
+            </div>
+
+            <!-- STEP 2: SOAL KUIS ENGINE -->
+            <div id="quizBodyStep" class="hidden max-w-3xl mx-auto space-y-6">
+                <div class="flex justify-between items-center bg-slate-100 p-4 rounded-2xl">
+                    <span id="questionProgress" class="font-bold text-teal-900">Soal 1 dari 25</span>
+                    <span id="quizScoreDisplay" class="font-bold text-amber-600">Skor Maksimal: 100</span>
+                </div>
+
+                <div class="bg-amber-50/60 p-6 rounded-3xl border-2 border-amber-200 space-y-4">
+                    <p id="questionTextIndo" class="text-base font-bold text-slate-800">Pertanyaan...</p>
+                    <p id="questionTextArabic" class="arabic-text text-3xl font-bold text-teal-950 text-right">السُّؤَالُ...</p>
+                    <div id="quizOptions" class="grid grid-cols-1 gap-3 pt-2">
+                        <!-- Pilihan jawaban -->
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center pt-4">
+                    <button id="prevBtn" onclick="prevQuestion()" class="px-5 py-2.5 bg-slate-200 hover:bg-slate-300 rounded-xl font-bold transition">Sebelumnya</button>
+                    <button id="nextBtn" onclick="nextQuestion()" class="px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl font-bold transition">Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: HASIL KUIS -->
+            <div id="quizResultStep" class="hidden text-center max-w-lg mx-auto space-y-4">
+                <h4 class="text-2xl font-bold text-teal-900">Kuis Selesai!</h4>
+                <p id="resultName" class="text-lg font-bold text-slate-700"></p>
+                <div class="text-5xl font-extrabold text-amber-500 py-2" id="finalScore">0</div>
+                <p id="sendingStatus" class="text-sm font-bold"></p>
+                <button onclick="restartQuiz()" class="px-6 py-3 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 transition">Ulangi Kuis</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-6 text-center text-xs">
+        <p>&copy; MTsN 1 Kota Palangka Raya - Media Pembelajaran Bahasa Arab Kelas 8</p>
+    </footer>
+
+    <!-- JAVASCRIPT ENGINE -->
+    <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let soundEnabled = true;
+        let userAnswers = {};
+
+        const questions = [
+            { id: 1, indo: "Apa arti dari kata kerja berikut?", arabic: "يَسْتَيْقِظُ", options: ["Bangun tidur", "Makan pagi", "Pergi sekolah", "Mandi"], correct: 0 },
+            { id: 2, indo: "Pilihlah bahasa Arab yang tepat untuk 'Pergi':", arabic: ".....", options: ["يَكْتُبُ", "يَذْهَبُ", "يَنَامُ", "يَقْرَأُ"], correct: 1 },
+            { id: 3, indo: "Lengkapi kalimat: عُثْمَانُ ..... إِلَى المَدْرَسَةِ", arabic: "عُثْمَانُ ..... إِلَى المَدْرَسَةِ", options: ["يَأْكُلُ", "يَذْهَبُ", "يَنَامُ", "يَشْرَبُ"], correct: 1 },
+            { id: 4, indo: "Bentuk Fi'il Mudhari' untuk kata ganti أَنَا (Saya) dari kata يَكْتُبُ adalah:", arabic: "أَنَا ..... الرِّسَالَةَ", options: ["تَكْتُبُ", "يَكْتُبُ", "أَكْتُبُ", "نَكْتُبُ"], correct: 2 },
+            { id: 5, indo: "Apa arti dari kata kerja berikut?", arabic: "يَتَوَضَّأُ", options: ["Mandi", "Berwudhu", "Shalat", "Tidur"], correct: 1 },
+            { id: 6, indo: "Terjemahkan ke dalam bahasa Arab: 'Saya membaca Al-Qur'an':", arabic: "أَنَا ..... القُرْآنَ", options: ["أَقْرَأُ", "تَقْرَأُ", "يَقْرَأُ", "نَقْرَأُ"], correct: 0 },
+            { id: 7, indo: "Apa arti dari kata berikut?", arabic: "يَتَنَاوَلُ الفَطُورَ", options: ["Makan siang", "Makan malam", "Makan pagi / Sarapan", "Minum teh"], correct: 2 },
+            { id: 8, indo: "Lengkapi kalimat berikut: هُوَ ..... المَلَابِسَ", arabic: "هُوَ ..... المَلَابِسَ", options: ["يَلْبَسُ", "يَأْكُلُ", "يَسْمَعُ", "يَفْتَحُ"], correct: 0 },
+            { id: 9, indo: "Kata ganti (Dhamir) yang tepat untuk kata تَذْهَبِيْنَ adalah:", arabic: "أَنْتِ ..... إِلَى المَكْتَبَةِ", options: ["أَنْتَ", "أَنْتِ", "هُوَ", "هِيَ"], correct: 1 },
+            { id: 10, indo: "Apa arti dari kata berikut?", arabic: "يُصَلِّي الصُّبْحَ", options: ["Shalat Dzuhur", "Shalat Subuh", "Shalat Maghrib", "Shalat Isya"], correct: 1 },
+            { id: 11, indo: "Lengkapi kalimat: نَحْنُ ..... الدَّرْسَ", arabic: "نَحْنُ ..... الدَّرْسَ", options: ["أَفْهَمُ", "تَفْهَمُ", "نَفْهَمُ", "يَفْهَمُ"], correct: 2 },
+            { id: 12, indo: "Apa bahasa Arab dari 'Mandi'?", arabic: ".....", options: ["يَغْتَسِلُ", "يَكْنُسُ", "يَطْبُخُ", "يَغْسِلُ"], correct: 0 },
+            { id: 13, indo: "Terjemahkan kata berikut:", arabic: "يَرْجِعُ مِنَ المَدْرَسَةِ", options: ["Pergi ke sekolah", "Pulang dari sekolah", "Masuk sekolah", "Duduk di sekolah"], correct: 1 },
+            { id: 14, indo: "Lengkapi kalimat: هِيَ ..... التِّلْفَازَ فِي غُرْفَةِ المَجْلِسِ", arabic: "هِيَ ..... التِّلْفَازَ", options: ["تُشَاهِدُ", "يُشَاهِدُ", "أُشَاهِدُ", "نُشَاهِدُ"], correct: 0 },
+            { id: 15, indo: "Apa arti dari kata berikut?", arabic: "يُذَاكِرُ الدُّرُوسَ", options: ["Mengulang pelajaran", "Menulis cerita", "Membeli buku", "Bermain bola"], correct: 0 },
+            { id: 16, indo: "Bentuk Fi'il Mudhari' untuk أَنْتَ (Kamu Laki-laki) dari kata يَعْمَلُ adalah:", arabic: "أَنْتَ ..... فِي المَكْتَبِ", options: ["أَعْمَلُ", "تَعْمَلُ", "يَعْمَلُ", "تَعْمَلِيْنَ"], correct: 1 },
+            { id: 17, indo: "Apa arti dari kata berikut?", arabic: "الحَافِلَةُ", options: ["Mobil", "Sepeda", "Bus", "Kereta api"], correct: 2 },
+            { id: 18, indo: "Lengkapi kalimat: أَحْمَدُ يَذْهَبُ إِلَى المَدْرَسَةِ ..... (dengan berjalan kaki)", arabic: "أَحْمَدُ يَذْهَبُ إِلَى المَدْرَسَةِ .....", options: ["مَشْيًا عَلَى الأَقْدَامِ", "بِالحَافِلَةِ", "بِالسَّيَّارَةِ", "بِالدَّرَّاجَةِ"], correct: 0 },
+            { id: 19, indo: "Apa arti dari kalimat berikut?", arabic: "أَنَامُ فِي غُرْفَةِ النَّوْمِ", options: ["Saya belajar di kamar tidur", "Saya tidur di kamar tidur", "Saya makan di ruang makan", "Saya mandi di kamar mandi"], correct: 1 },
+            { id: 20, indo: "Lengkapi kalimat: عَائِشَةُ ..... العَشَاءَ فِي المَطْبَخِ", arabic: "عَائِشَةُ ..... العَشَاءَ", options: ["تَطْبُخُ", "يَطْبُخُ", "أَطْبُخُ", "نَطْبُخُ"], correct: 0 },
+            { id: 21, indo: "Apa bahasa Arab dari 'Mendengarkan Radio'?", arabic: ".....", options: ["يَسْمَعُ الإِذَاعَةَ", "يَقْرَأُ الجَرِيْدَةَ", "يَكْتُبُ الرِّسَالَةَ", "يَلْعَبُ الكُرَةَ"], correct: 0 },
+            { id: 22, indo: "Kata ganti yang sesuai untuk kalimat نَلْعَبُ كُرَةَ القَدَمِ adalah:", arabic: "..... نَلْعَبُ كُرَةَ القَدَمِ", options: ["أَنَا", "نَحْنُ", "هُوَ", "هِيَ"], correct: 1 },
+            { id: 23, indo: "Apa arti dari kata berikut?", arabic: "يَغْسِلُ الأَطْبَاقَ", options: ["Mencuci piring", "Mencuci baju", "Menyapu lantai", "Merapikan tempat tidur"], correct: 0 },
+            { id: 24, indo: "Lengkapi kalimat: أَنَا ..... أَسْنَانِي بِالفُرْشَاةِ (Saya menggosok gigi)", arabic: "أَنَا ..... أَسْنَانِي", options: ["أُنَظِّفُ", "تُنَظِّفُ", "يُنَظِّفُ", "نُنَظِّفُ"], correct: 0 },
+            { id: 25, indo: "Apa arti dari kalimat berikut?", arabic: "أَسْتَرِيْحُ بَعْدَ العَمَلِ", options: ["Saya bekerja setelah beristirahat", "Saya beristirahat setelah bekerja", "Saya tidur di tempat kerja", "Saya pulang kerja"], correct: 1 }
+        ];
+
+        function navigateTo(id) {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('soundIcon').className = soundEnabled ? 'fa-solid fa-volume-high text-lg' : 'fa-solid fa-volume-xmark text-lg';
+        }
+
+        function speakText(text) {
+            if (soundEnabled && 'speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ar-SA';
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function startQuiz(e) {
+            e.preventDefault();
+            document.getElementById('quizFormStep').classList.add('hidden');
+            document.getElementById('quizBodyStep').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestionIndex];
+            document.getElementById('questionProgress').innerText = `Soal ${currentQuestionIndex + 1} dari ${questions.length}`;
+            document.getElementById('questionTextIndo').innerText = q.indo;
+            document.getElementById('questionTextArabic').innerText = q.arabic;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-3.5 rounded-xl border-2 font-bold transition flex items-center justify-between ${userAnswers[currentQuestionIndex] === idx ? 'border-teal-600 bg-teal-50 text-teal-900' : 'border-slate-200 hover:bg-slate-50'}`;
+                btn.innerHTML = `<span><b class="mr-2">${String.fromCharCode(65 + idx)}.</b> ${opt}</span>`;
+                btn.onclick = () => selectOption(idx);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('prevBtn').style.visibility = currentQuestionIndex === 0 ? 'hidden' : 'visible';
+            document.getElementById('nextBtn').innerText = currentQuestionIndex === questions.length - 1 ? 'Selesai & Kirim' : 'Selanjutnya';
+        }
+
+        function selectOption(idx) {
+            userAnswers[currentQuestionIndex] = idx;
+            loadQuestion();
+        }
+
+        function nextQuestion() {
+            if (userAnswers[currentQuestionIndex] === undefined) {
+                alert("Silakan pilih salah satu jawaban terlebih dahulu!");
+                return;
+            }
+
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function finishQuiz() {
+            let correctCount = 0;
+            questions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.correct) {
+                    correctCount++;
+                }
+            });
+
+            const totalQuestions = questions.length;
+            const wrongCount = totalQuestions - correctCount;
+            score = correctCount * 4; // 25 x 4 = 100
+
+            let predikat = "Muqashshir (Cukup)";
+            if (score >= 90) predikat = "Mumtaz (Sangat Baik)";
+            else if (score >= 80) predikat = "Jayyid Jiddan (Baik Sekali)";
+            else if (score >= 70) predikat = "Jayyid (Baik)";
+
+            const name = document.getElementById('studentName').value;
+            const studentClass = document.getElementById('studentClass').value;
+
+            document.getElementById('quizBodyStep').classList.add('hidden');
+            document.getElementById('quizResultStep').classList.remove('hidden');
+            document.getElementById('resultName').innerText = `Nama: ${name} | Kelas: ${studentClass}`;
+            document.getElementById('finalScore').innerText = `Skor Akhir: ${score}`;
+            
+            const statusElem = document.getElementById('sendingStatus');
+            statusElem.innerText = "Mengirim nilai ke Google Sheets...";
+
+            // MASUKKAN URL GOOGLE APPS SCRIPT ANDA DI SINI
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxfAWFeXR73UUrMPwtnhXNzNbS35k1KiGqk2K2OsIDrbJ6SvSf27Ir7HPsK_LX-pK6Z/exec'; 
+
+            const payload = {
+                nama: name,
+                kelas: studentClass,
+                skor: score,
+                benar: correctCount,
+                salah: wrongCount,
+                predikat: predikat
+            };
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    statusElem.innerText = "✅ Nilai berhasil tersimpan di Google Sheets!";
+                    statusElem.className = "text-sm text-emerald-600 font-bold";
+                } else {
+                    statusElem.innerText = "❌ Terjadi kesalahan: " + (data.error || "Gagal menyimpan");
+                    statusElem.className = "text-sm text-red-600 font-bold";
+                }
+            })
+            .catch(error => {
+                console.error('Gagal mengirim:', error);
+                statusElem.innerText = "❌ Gagal mengirim nilai. Periksa koneksi internet.";
+                statusElem.className = "text-sm text-red-600 font-bold";
+            });
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            document.getElementById('quizResultStep').classList.add('hidden');
+            document.getElementById('quizFormStep').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
