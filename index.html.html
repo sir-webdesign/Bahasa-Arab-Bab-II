@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Pembelajaran Bahasa Arab Bab II Kelas 8 - MTsN 1 Kota Palangka Raya</title>
+    <title>Media Pembelajaran Bahasa Arab Bab II - MTsN 1 Kota Palangka Raya</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@600;700;800&family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         .arabic-text {
             font-family: 'Amiri', 'Cairo', serif;
@@ -18,12 +17,12 @@
         }
     </style>
 </head>
-<body class="bg-teal-50/40 text-slate-800 font-sans min-h-screen flex flex-col justify-between antialiased">
+<body class="bg-teal-50/40 text-slate-800 min-h-screen flex flex-col justify-between antialiased">
 
-    <!-- Header & Navigasi -->
+    <!-- Header / Navigasi Utama -->
     <header class="sticky top-0 z-40 bg-white border-b-4 border-teal-600 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer">
+            <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 bg-gradient-to-tr from-teal-700 to-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                     <i class="fa-solid fa-sun text-2xl"></i>
                 </div>
@@ -39,7 +38,6 @@
                 <a href="#hero" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Beranda</a>
                 <a href="#tingkat1" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Tingkat 1</a>
                 <a href="#tingkat2" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Tingkat 2</a>
-                <a href="#tingkat3" class="px-3 py-2 rounded-xl text-slate-700 hover:bg-teal-100 font-bold transition text-sm">Tingkat 3</a>
                 <a href="#kuis" class="px-4 py-2 bg-amber-400 text-amber-950 font-black rounded-xl shadow-md transition flex items-center gap-2 text-sm">
                     <i class="fa-solid fa-gamepad"></i> Kuis Interaktif
                 </a>
@@ -47,7 +45,7 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Konten Utama Halaman Web -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-12">
         
         <!-- Hero Section -->
@@ -60,7 +58,7 @@
                     يَوْمِيَّاتُنَا (Hari-Hari Kami)
                 </h2>
                 <p class="text-teal-100 text-base sm:text-lg">
-                    Pelajari Modul 1, 2, dan 3 kemudian kerjakan Kuis Interaktif 25 Soal.
+                    Pelajari Modul 1 dan 2, kemudian kerjakan Kuis Interaktif.
                 </p>
                 <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
                     <a href="#tingkat1" class="px-6 py-3 bg-amber-400 text-amber-950 font-bold rounded-2xl shadow-lg hover:bg-amber-500 transition">Mulai Belajar</a>
@@ -145,7 +143,7 @@
         <section id="kuis" class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-amber-400 space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-4 py-1.5 bg-amber-400 text-amber-950 text-xs font-black rounded-full uppercase">Ujian Akhir Modul</span>
-                <h3 class="text-3xl font-bold text-slate-900">Kuis Interaktif 25 Soal</h3>
+                <h3 class="text-3xl font-bold text-slate-900">Kuis Interaktif Bahasa Arab</h3>
             </div>
 
             <!-- STEP 1: FORM IDENTITAS SISWA -->
@@ -177,7 +175,7 @@
             <!-- STEP 2: SOAL KUIS ENGINE -->
             <div id="quizBodyStep" class="hidden max-w-3xl mx-auto space-y-6">
                 <div class="flex justify-between items-center bg-slate-100 p-4 rounded-2xl">
-                    <span id="questionProgress" class="font-bold text-teal-900">Soal 1 dari 25</span>
+                    <span id="questionProgress" class="font-bold text-teal-900">Soal 1</span>
                     <span id="quizScoreDisplay" class="font-bold text-amber-600">Skor Maksimal: 100</span>
                 </div>
 
@@ -204,10 +202,12 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="bg-slate-900 text-white py-6 text-center text-xs">
         <p>&copy; MTsN 1 Kota Palangka Raya - Media Pembelajaran Bahasa Arab Kelas 8</p>
     </footer>
 
+    <!-- Script Kuis -->
     <script>
         let currentQuestionIndex = 0;
         let score = 0;
@@ -246,7 +246,7 @@
             });
 
             document.getElementById('prevBtn').style.visibility = currentQuestionIndex === 0 ? 'hidden' : 'visible';
-            document.getElementById('nextBtn').innerText = currentQuestionIndex === questions.length - 1 ? 'Selesai & Kirim' : 'Selanjutnya';
+            document.getElementById('nextBtn').innerText = currentQuestionIndex === questions.length - 1 ? 'Selesai' : 'Selanjutnya';
         }
 
         function selectOption(idx) {
